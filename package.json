@@ -1,0 +1,22 @@
+{
+  "name": "portfoliogenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git", 
+    "url": "git+https://github.com/JessicaJeyanthiran/portfoliogenerator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JessicaJeyanthiran/portfoliogenerator/issues"
+  },
+  "homepage": "https://github.com/JessicaJeyanthiran/portfoliogenerator#readme",
+  "dependencies": {
+    "inquirer": "^9.1.4"
+  }
+}
