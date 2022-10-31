@@ -2,6 +2,23 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generatePage = require('./src/page-template.js');
 
+const mockData = {
+  name: 'Jessica',
+  gitHub: 'JessicaJeyanthiran',
+  confirmAbout: true,
+  about: 'Hello World, my name is Jessica Jeyanthiran and I am a full stack web developer!',
+  projects: [
+    {
+      name: 'nodePortfolio',
+      description: 'CLI App',
+      languages: [Array],
+      link: 'https://github.com/JessicaJeyanthiran/nodePortfolio',
+      feature: true,
+      confirmAddProject: false
+    }
+  ]
+}
+
 const promptUser = () => {
 return inquirer.prompt([
     {
@@ -133,16 +150,17 @@ Add a New Project
   
 };
 
-promptUser()
-.then(promptProject)
-.then(portfolioData => {
-    console.log(portfolioData);
-});
+// promptUser()
+// .then(promptProject)
+// .then(portfolioData => {
+//   const pageHTML = generatePage(portfolioData);
 
-// const pageHTML = generatePage(name, github);
+fs.writeFile('./index.html', pageHTML, err => {
+  if (err) throw err; });
 
-// fs.writeFile('./index.html', pageHTML, err => {
-//   if (err) throw err;
-
-//   console.log('Portfolio complete! Check out index.html to see the output!');
+// //   console.log('Portfolio complete! Check out index.html to see the output!');
+// // });
 // });
+
+
+const pageHTML = generatePage(mockData);
